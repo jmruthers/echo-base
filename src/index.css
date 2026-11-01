@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650;9..144,700&family=Outfit:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+  --color-main-50: #f3f7f4;
+  --color-main-100: #e2ebe4;
+  --color-main-200: #c3d6c8;
+  --color-main-300: #97b7a1;
+  --color-main-400: #6a9478;
+  --color-main-500: #4a7558;
+  --color-main-600: #385d45;
+  --color-main-700: #2e4a38;
+  --color-main-800: #263c2e;
+  --color-main-900: #203227;
+  --color-main-950: #101a14;
+
+  --color-sec-50: #f7f6f4;
+  --color-sec-100: #eceae5;
+  --color-sec-200: #d9d4cb;
+  --color-sec-300: #c0b8aa;
+  --color-sec-400: #a89c8b;
+  --color-sec-500: #958677;
+  --color-sec-600: #7f6f63;
+  --color-sec-700: #685a51;
+  --color-sec-800: #564c45;
+  --color-sec-900: #48403b;
+  --color-sec-950: #27221f;
+
+  --color-acc-50: #fbf6f1;
+  --color-acc-100: #f3e7d8;
+  --color-acc-200: #e5ccb0;
+  --color-acc-300: #d4aa80;
+  --color-acc-400: #c48855;
+  --color-acc-500: #b46f3d;
+  --color-acc-600: #9a5732;
+  --color-acc-700: #7c432b;
+  --color-acc-800: #673827;
+  --color-acc-900: #563024;
+  --color-acc-950: #2f1711;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    font-family: var(--font-sans);
+    color: var(--color-sec-900);
+    background: var(--color-sec-50);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    color: var(--color-main-950);
+    font-weight: 650;
+    line-height: 1.15;
+  }
+
+  p {
+    line-height: 1.65;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .reveal {
+    animation: reveal-up 0.8s ease both;
+  }
+
+  .reveal-delay-1 {
+    animation-delay: 0.12s;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 0.24s;
+  }
+
+  .hero-kenburns {
+    animation: kenburns 18s ease-out both;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
